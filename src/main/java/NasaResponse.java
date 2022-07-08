@@ -1,10 +1,12 @@
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class NasaResponse {
     private String copyright;
     private String date;
     private String explanation;
     private String hdurl;
-    private String media_type;
-    private String service_version;
+    private String mediaType;
+    private String serviceVersion;
     private String title;
     private String url;
 
@@ -27,12 +29,14 @@ public class NasaResponse {
         return this.hdurl;
     }
 
-    public String getMedia_type() {
-        return this.media_type;
+    @JsonProperty ("media_type")
+    public String getMediaType() {
+        return this.mediaType;
     }
 
-    public String getService_version() {
-        return this.service_version;
+    @JsonProperty ("service_version")
+    public String getServiceVersion() {
+        return this.serviceVersion;
     }
 
     public String getTitle() {
@@ -59,12 +63,13 @@ public class NasaResponse {
         this.hdurl = hdurl;
     }
 
-    public void setMedia_type(String media_type) {
-        this.media_type = media_type;
+
+    public void setMediaType(@JsonProperty ("media_type") String mediaType) {
+        this.mediaType = mediaType;
     }
 
-    public void setService_version(String service_version) {
-        this.service_version = service_version;
+    public void setServiceVersion(@JsonProperty ("service_version") String serviceVersion) {
+        this.serviceVersion = serviceVersion;
     }
 
     public void setTitle(String title) {
